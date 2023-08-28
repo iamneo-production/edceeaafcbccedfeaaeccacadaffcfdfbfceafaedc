@@ -14,7 +14,23 @@ public class TasksService {
     private TasksRepository tasksrepository;
 
     public List<Task> getAllTasks(){
-        return (List<Task>)
+        return (List<Task>) tasksrepository.findAll();
+    }
+
+    public Task getTaskById(String taskId){
+        return tasksrepository.findById(taskId).orElse(null);
+    }
+
+    public void saveTask(Task task){
+        tasksrepository.save(task);
+    }
+
+    public void delete(String taskId){
+        tasksrepository.deleteById(taskId);
+    }
+
+    public void updateTaskStatus(Task task){
+        tasksrepository.save(task);
     }
 
    
