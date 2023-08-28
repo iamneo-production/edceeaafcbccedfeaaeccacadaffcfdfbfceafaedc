@@ -7,13 +7,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Taskentity {
+public class Task {
 
     @Id
+    @Column
     private String taskId;
+    @Column
     private String taskHolderName;
+    @Column
     private String taskDate;
+    @Column
     private String taskName;
+    @Column
     private String taskStatus;
    
 
@@ -48,14 +53,4 @@ public class Taskentity {
         this.taskStatus = taskStatus;
     }
 
-    public Taskentity(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
-        this.taskId = taskId;
-        this.taskHolderName = taskHolderName;
-        this.taskDate = taskDate;
-        this.taskName = taskName;
-        this.taskStatus = taskStatus;
-    }
-  public Taskentity(){
-     
-  }  
 }
